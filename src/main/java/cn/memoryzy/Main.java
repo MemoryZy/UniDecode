@@ -35,8 +35,8 @@ public class Main extends JFrame {
         setIconImage(icon);
 
         // 初始化组件
-        chineseArea = createTextArea("");
-        unicodeArea = createTextArea("");
+        chineseArea = createTextArea();
+        unicodeArea = createTextArea();
 
         JButton toUnicodeBtn = createSmallButton("中文 → Unicode");
         JButton toChineseBtn = createSmallButton("Unicode → 中文");
@@ -83,13 +83,12 @@ public class Main extends JFrame {
         unicodeArea.setText("");
     }
 
-    private JTextArea createTextArea(String placeholder) {
+    private JTextArea createTextArea() {
         JTextArea area = new JTextArea();
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
         area.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         area.setFont(new Font("Monospaced", Font.PLAIN, scale(14)));
-        area.setText(placeholder);
         return area;
     }
 
